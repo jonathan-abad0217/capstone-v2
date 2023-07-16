@@ -50,6 +50,7 @@
 
       .profile-img {
         border: 3px solid #13632e;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s ease;
       }
 
@@ -64,6 +65,7 @@
         font-weight: bold;
         color: #028d30;
         font-size: 3rem;
+        /* #028d30 */
       }
       h1 {
         font-weight: bold;
@@ -77,20 +79,7 @@
         font-weight: bold;
         color: #4c9a2a;
       }
-      .rounded-custom {
-        border-radius: 1.5rem;
-      }
-      #proj-img {
-        height: 16rem;
-        width: 100%;
-      }
 
-      .card-bg {
-        background-color: #46c974;
-      }
-      .card-body-bg {
-        background-color: #ebdfdf;
-      }
       .card-text {
         color: #415830;
       }
@@ -117,11 +106,144 @@
         .form-bg {
           margin-top: 15px;
         }
+        .carousel-caption {
+          text-align: center;
+          border: solid 2px #000000;
+          border-radius: 25px;
+        }
+
+        #image-wrapper-1 {
+          margin-bottom: 350px !important;
+          padding-bottom: 50px;
+          height: auto !important;
+        }
+        #image-wrapper-2 {
+          margin-bottom: 23.4375rem !important;
+          padding-bottom: 20px;
+          height: auto !important;
+        }
+
+        #image-wrapper-3 {
+          margin-bottom: 300px !important;
+          padding-bottom: 10px;
+          height: auto !important;
+        }
+
+        .carousel-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 0;
+          pointer-events: auto;
+          transition: opacity 0.3s ease;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+          opacity: 0;
+        }
       }
-      @media (min-width: 768px) {
+
+      /* end of small size */
+      @media (max-width: 768px) {
         .form-bg {
           margin-top: 15px;
         }
+        .carousel-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #image-wrapper-1 {
+          margin-bottom: 200px;
+          padding-bottom: 10px;
+          height: auto;
+        }
+        #image-wrapper-2 {
+          margin-bottom: 14.375rem;
+          padding-bottom: 10px;
+          height: auto;
+        }
+
+        #image-wrapper-3 {
+          margin-bottom: 11.25rem;
+          padding-bottom: 10px;
+          height: auto;
+        }
+
+        .carousel-caption {
+          text-align: center;
+          border: solid 2px #000000;
+          border-radius: 25px;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+          position: absolute;
+          top: 40%;
+          transform: translateY(-50%);
+        }
+
+        .carousel-control-prev {
+          left: 0;
+        }
+
+        .carousel-control-next {
+          right: 0;
+        }
+      }
+
+      /* end of medium */
+      .carousel-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .image-wrapper {
+        margin-bottom: 120px;
+        padding-bottom: 80px;
+      }
+
+      .carousel-caption {
+        text-align: center;
+        border: solid 2px #000000;
+        border-radius: 25px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+      }
+
+      .carousel-control-prev {
+        left: 0;
+      }
+
+      .carousel-control-next {
+        right: 0;
+      }
+
+      .extra-img {
+        height: 70%;
+        width: 100%;
+        padding: 5px;
+        margin: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      footer{
+        font-size: 18px;
       }
     </style>
   </head>
@@ -131,7 +253,7 @@
       id="navbar"
     >
       <div class="container-fluid">
-        <a class="d-inline text-dark" href="#landing-section">
+        <a class="d-inline text-dark" href="#landing">
           <b>
             <span
               class="spinner-grow spinner-grow-sm text-success"
@@ -153,13 +275,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link text-dark" href="#project-section"
+            <a class="nav-item nav-link text-dark" href="#project"
               >Projects</a
             >
-            <a class="nav-item nav-link text-dark" href="#tool-section"
+            <a class="nav-item nav-link text-dark" href="#tools"
               >Tools</a
             >
-            <a class="nav-item nav-link text-dark" href="#contact-section"
+            <a class="nav-item nav-link text-dark" href="#extra"
+              >Extra</a
+            >
+            <a class="nav-item nav-link text-dark" href="#contact"
               >Contact</a
             >
           </div>
@@ -172,7 +297,7 @@
       <section id="landing-section" data-aos="zoom-in-up">
         <div
           class="container d-flex align-items-center justify-content-center pt-5 my-5"
-          id="content"
+          id="landing"
         >
           <div class="row">
             <div
@@ -189,8 +314,7 @@
             >
               <h1 class="h1-landing">Hello there!</h1>
               <h3>
-                I'm <strong>Jonathan</strong> Abad, a Junior Research and
-                Development Engineer working with Advanced World Solutions Inc.
+                I'm <strong>Jonathan</strong> Abad, a full-stack developer with expertise in HTML, CSS, JavaScript, PHP, SQL, and Python. I graduated from San Sebastian College Recoletos de Cavite, bringing a strong background in computer engineering and a passion for creating dynamic web applications.
               </h3>
             </div>
           </div>
@@ -205,70 +329,109 @@
       <section id="project-section" data-aos="zoom-in-up">
         <div
           class="container d-flex align-items-center justify-content-center mb-5 mt-3"
-          id="content"
+          id="project"
         >
           <div class="row">
             <div class="col-12" data-aos="zoom-in-down">
               <h1 class="text-center mb-3">My Projects</h1>
             </div>
             <div class="col-md-12">
-              <div class="card-bg rounded card-deck py-3 mx-3 sm-px-3">
-                <div class="card rounded-custom" data-aos="zoom-in-up">
-                  <img
-                    id="proj-img"
-                    src="images/project1.JPG"
-                    class="card-img-top img-fluid"
-                    alt="..."
-                  />
-                  <div class="card-body-bg card-body">
-                    <h5 class="card-title">
-                      Sensor Based Disinfection Machine
-                    </h5>
-                    <p class="card-text">
-                      This robot disinfects the designated area automatically or
-                      manually using a website connected to the local area
-                      network. It uses disinfecting mist and UVC light that is
-                      certified by a Doctor and a Microbiologist.
-                    </p>
+              <div class="container mt-5">
+                <div
+                  id="carouselExampleFade"
+                  class="carousel slide carousel-fade"
+                  data-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="image-wrapper" id="image-wrapper-1">
+                        <img
+                          src="images/project1.JPG"
+                          class="d-block w-100"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="carousel-caption mt-5">
+                        <h5 class="card-title">
+                          Sensor Based Disinfection Machine
+                        </h5>
+                        <p class="card-text">
+                          This robot disinfects the designated area
+                          automatically or manually using a website connected to
+                          the local area network. It uses disinfecting mist and
+                          UVC light that is certified by a Doctor and a
+                          Microbiologist.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="image-wrapper" id="image-wrapper-2">
+                        <img
+                          src="images/project2.PNG"
+                          class="d-block w-100"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="carousel-caption mt-5">
+                        <h5 class="card-title">Plant Monitoring IoT</h5>
+                        <p class="card-text">
+                          This IoT device is created using Raspberry Pi 4. For
+                          the software, we used Python Flask and TinyDB for the
+                          database. It can be operated automatically or manually
+                          using the website, and you can see the value of the
+                          sensors on the website for real-time monitoring.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="image-wrapper" id="image-wrapper-3">
+                        <img
+                          src="images/project3.jpg"
+                          class="d-block w-100"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="carousel-caption mt-5">
+                        <h5 class="card-title">
+                          JAWRMBS Security and Monitoring
+                        </h5>
+                        <p class="card-text">
+                          This app is made using MIT App inventor. The device is
+                          made from Arduino Uno, fingerprint sensors and camera.
+                          It has a machine learning model of students for the
+                          face detection.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="card rounded-custom" data-aos="zoom-in-down">
-                  <img
-                    id="proj-img"
-                    src="images/project2.PNG"
-                    class="card-img-top img-fluid"
-                    alt="..."
-                  />
-                  <div class="card-body-bg card-body">
-                    <h5 class="card-title">Plant Monitoring IoT</h5>
-                    <p class="card-text">
-                      This Iot device is created using Raspberry Pi 4, moist
-                      sensor and a water pump. For the software, we used Python
-                      Flask and TinyDB for the database. It can be operated
-                      automatically or manually using the website, also you can
-                      see the value of the sensors in the website for real-time
-                      monitoring.
-                    </p>
-                  </div>
-                </div>
-                <div class="card rounded-custom" data-aos="zoom-in-up">
-                  <img
-                    id="proj-img"
-                    src="images/project3.PNG"
-                    class="card-img-top img-fluid"
-                    alt="..."
-                  />
-                  <div class="card-body-bg card-body">
-                    <h5 class="card-title">JAWRMBS Security and Monitoring</h5>
-                    <p class="card-text">
-                      This app is made using MIT App inventor. The device is
-                      made from Arduino Uno, fingerprint sensors and camera. It
-                      has a machine learning model of students for the face
-                      detection.
-                    </p>
-                  </div>
+                  <a
+                    class="carousel-control-prev"
+                    href="#carouselExampleFade"
+                    role="button"
+                    data-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a
+                    class="carousel-control-next"
+                    href="#carouselExampleFade"
+                    role="button"
+                    data-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="sr-only">Next</span>
+                  </a>
                 </div>
               </div>
+
+              <!-- end of col-md-12 -->
             </div>
           </div>
         </div>
@@ -279,7 +442,7 @@
 
       <!-- section 1 -->
       <section id="tool-section" ata-aos="zoom-in-right">
-        <div class="container my-5" style="overflow-x: hidden" id="content">
+        <div class="container my-5" style="overflow-x: hidden" id="tools">
           <div class="row">
             <div class="col-md-12 text-center">
               <h1 class="mt-3">Front-end Tools</h1>
@@ -334,10 +497,138 @@
       </section>
       <!-- end of section 1 -->
 
+      <!-- test images section -->
+      <section id="extra-section" ata-aos="zoom-in-right">
+        <div class="container mt-5" style="overflow-x: hidden" id="extra">
+          <div class="row">
+            <div class="col-12" data-aos="zoom-in-down">
+              <h1 class="text-center mb-3">Extras</h1>
+            </div>
+          <div class="row">
+            <div class="col-6 col-md-3">
+              <img
+                src="images/image1.jpg"
+                alt="Image 1"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-3">
+              <img
+                src="images/image2.jpg"
+                alt="Image 2"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-3">
+              <img
+                src="images/image3.jpg"
+                alt="Image 3"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-3">
+              <img
+                src="images/image4.jpg"
+                alt="Image 4"
+                class="img-fluid extra-img"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-md-6">
+              <img
+                src="images/image5.jpg"
+                alt="Image 5"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-6">
+              <img
+                src="images/image6.jpg"
+                alt="Image 6"
+                class="img-fluid extra-img"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-md-2">
+              <img
+                src="images/image7.jpg"
+                alt="Image 7"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-2">
+              <img
+                src="images/image8.jpg"
+                alt="Image 8"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-2">
+              <img
+                src="images/image9.jpg"
+                alt="Image 9"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-2">
+              <img
+                src="images/image10.jpg"
+                alt="Image 10"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-2">
+              <img
+                src="images/image11.jpg"
+                alt="Image 11"
+                class="img-fluid extra-img"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-md-4">
+              <img
+                src="images/image12.jpg"
+                alt="Image 12"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="images/image13.jpg"
+                alt="Image 13"
+                class="img-fluid extra-img"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="images/image14.jpg"
+                alt="Image 14"
+                class="img-fluid extra-img"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-12 mb-0">
+              <img
+                src="images/image15.jpg"
+                alt="Image 15"
+                class="img-fluid extra-img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="horizontal-line"></div>
+      </section>
+
+      <!-- end of images section -->
+
       <!-- section 1 -->
       <section id="contact-section" data-aos="fade-up">
         <div
-          id="content"
+          id="contact"
           class="container d-flex align-items-center justify-content-center mb-5 mt-5"
           style="overflow-x: hidden"
         >
@@ -431,7 +722,7 @@
       <!-- end of section 1 -->
     </main>
     <footer
-      class="nav-bg container-fluid d-flex d-inline text-center justify-content-center d-grid gap-3 pt-3"
+      class="nav-bg container-fluid d-flex d-inline text-center justify-content-center d-grid gap-3 py-3"
     >
       <a
         class="d-inline mx-1 text-dark secondary-color"
