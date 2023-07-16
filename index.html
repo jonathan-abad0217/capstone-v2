@@ -339,9 +339,56 @@
                     placeholder="Enter your message"
                   ></textarea>
                 </div>
-                <button type="button" class="btn btn-outline-success">
+                <button
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#contact-Modal"
+                  class="btn btn-success"
+                >
                   SUBMIT
                 </button>
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="contact-Modal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Message Submitted Successfully
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                  
+                      <div class="modal-body">
+                        Thank you for reaching out! Your message has been
+                        successfully submitted. We appreciate your time and will
+                        get back to you as soon as possible.
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of modal -->
               </form>
             </div>
           </div>
